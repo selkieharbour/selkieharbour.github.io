@@ -6,8 +6,11 @@
 body {
 	font-family: Cardenio, 'Roboto', sans-serif;
 	background-image: url("../images/background.jpg");
+  background-attachment:fixed;
+  background-position-y: bottom;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #396487;
+  background-size: cover;
   color: rgba(255, 246, 246, 1.0);
   font-size: 16pt;
   line-height: 1.75rem;
@@ -375,7 +378,6 @@ img.many-games {
 
 img.about {
   border-radius: 10px;
-  overflow: visible;
   max-width: 350px;
   max-height: auto;
   margin-bottom: 32px;
