@@ -1,30 +1,26 @@
-/*
-	Tessellate by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderGroups = document.querySelectorAll('.slider-group');
 
-(function($) {
+  sliderGroups.forEach((group) => {
+    const sliderEl = group.querySelector('.siema');
 
-	var	$window = $(window),
-		$body = $('body');
+    const siema = new Siema({
+      selector: sliderEl,
+      duration: 400,
+      easing: 'ease-out',
+      perPage: 1,
+      loop: true
+    });
 
-	// Breakpoints.
-		breakpoints({
-			wide:    [ '1281px',  '1680px' ],
-			normal:  [ '1001px',  '1280px' ],
-			narrow:  [ '737px',   '1000px' ],
-			mobile:  [ null,      '736px'  ]
-		});
+    // No autoplay 🎉
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+    // Buttons scoped to this group
+    const prevBtn = group.querySelector('.prev');
+    const nextBtn = group.querySelector('.next');
 
-	// Scrolly.
-		$('.scrolly').scrolly();
-
-})(jQuery);
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => siema.prev());
+      nextBtn.addEventListener('click', () => siema.next());
+    }
+  });
+});
