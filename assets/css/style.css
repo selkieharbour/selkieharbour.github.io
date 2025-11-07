@@ -377,7 +377,7 @@ img.many-games {
 }
 
 img.about {
-  border-radius: 10px;
+  border-radius: 10px !important;
   max-width: 350px;
   max-height: auto;
   margin-bottom: 32px;
